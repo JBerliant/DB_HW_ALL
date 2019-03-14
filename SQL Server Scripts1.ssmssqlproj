@@ -1,0 +1,64 @@
+<?xml version="1.0"?>
+<SqlWorkbenchSqlProject xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="SQL Server Scripts1">
+  <Items>
+    <LogicalFolder Name="Connections" Type="2" Sorted="true">
+      <Items>
+        <ConnectionNode Name="LAB-MSSQL01:MILESTRAINING\JBERLIANT">
+          <Created>2019-03-10T15:22:24.665582-04:00</Created>
+          <Type>SQL</Type>
+          <Server>LAB-MSSQL01</Server>
+          <UserName />
+          <Authentication>Windows Authentication</Authentication>
+          <InitialDB>JBerliant_2019</InitialDB>
+          <LoginTimeout>30</LoginTimeout>
+          <ExecutionTimeout>0</ExecutionTimeout>
+          <ConnectionProtocol>NotSpecified</ConnectionProtocol>
+          <ApplicationName>Microsoft SQL Server Management Studio - Query</ApplicationName>
+        </ConnectionNode>
+      </Items>
+    </LogicalFolder>
+    <LogicalFolder Name="Queries" Type="0" Sorted="true">
+      <Items>
+        <FileNode Name="hw3_4_work queries.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:LAB-MSSQL01:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>LAB-MSSQL01</AssociatedConnSrvName>
+          <AssociatedConnUserName />
+          <FullPath>hw3_4_work queries.sql</FullPath>
+        </FileNode>
+        <FileNode Name="HW4_queries.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:LAB-MSSQL01:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>LAB-MSSQL01</AssociatedConnSrvName>
+          <AssociatedConnUserName />
+          <FullPath>HW4_queries.sql</FullPath>
+        </FileNode>
+        <FileNode Name="Select_Create_table_lab_3-4.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:LAB-MSSQL01:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>LAB-MSSQL01</AssociatedConnSrvName>
+          <AssociatedConnUserName />
+          <FullPath>Select_Create_table_lab_3-4.sql</FullPath>
+        </FileNode>
+        <FileNode Name="Tavern_Tables_HW4.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:LAB-MSSQL01:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>LAB-MSSQL01</AssociatedConnSrvName>
+          <AssociatedConnUserName />
+          <FullPath>Tavern_Tables_HW4.sql</FullPath>
+        </FileNode>
+        <FileNode Name="Tavern_Values_HW4.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:LAB-MSSQL01:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>LAB-MSSQL01</AssociatedConnSrvName>
+          <AssociatedConnUserName />
+          <FullPath>Tavern_Values_HW4.sql</FullPath>
+        </FileNode>
+        <FileNode Name="work_queries.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:LAB-MSSQL01:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>LAB-MSSQL01</AssociatedConnSrvName>
+          <AssociatedConnUserName />
+          <FullPath>work_queries.sql</FullPath>
+        </FileNode>
+      </Items>
+    </LogicalFolder>
+    <LogicalFolder Name="Miscellaneous" Type="3" Sorted="true">
+      <Items />
+    </LogicalFolder>
+  </Items>
+</SqlWorkbenchSqlProject>
