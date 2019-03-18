@@ -45,3 +45,85 @@ concat (column_name,' ', data_type,(CASE WHEN data_type = 'varchar' THEN '(50)' 
 FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_NAME = 'tavern_info'
 UNION ALL
 SELECT ');';
+
+
+
+
+-- pricing table is scalar
+GO
+CREATE FUNCTION Fun_table (@service_id int,@qty int)
+RETURNS DEC
+AS
+BEGIN
+DECLARE @totalcost DEC(8,2)
+SET @totalcost = (SELECT TOP 1 service_price from tavern_sales
+WHERE service_id = @service_id)*@qty
+RETURN @totalcost
+
+END;
+
+drop function Fun_table;
+select dbo.Fun_table(4,3);
+
+
+(SELECT TOP 1 service_price from tavern_sales
+WHERE service_id = 3)
+
+
+
+IF OBJECT_ID(N'dbo.select_create', N'FN') IS NOT NULL
+	DROP FUNCTION dbo.select_create;
+GO
+
+CREATE FUNCTION dbo.select_create(@table VARCHAR(50))
+RETURNS TABLE AS RETURN
+(SELECT 
+CONCAT('CREATE TABLE ',TABLE_NAME, ' (') as queryPiece 
+FROM INFORMATION_SCHEMA.TABLES
+ WHERE TABLE_NAME = @table
+UNION ALL
+SELECT CONCAT(cols.COLUMN_NAME, ' ', cols.DATA_TYPE, 
+(
+CASE WHEN CHARACTER_MAXIMUM_LENGTH IS NOT NULL 
+Then CONCAT
+('(', CAST(CHARACTER_MAXIMUM_LENGTH as varchar(100)), ')') 
+Else '' 
+END)
+, 
+CASE WHEN CONSTRAINT_TYPE = 'PRIMARY KEY'
+Then 
+(' PRIMARY KEY') 
+Else '' 
+END
+, 
+CASE WHEN CONSTRAINT_TYPE = 'FOREIGN KEY'
+Then 
+(CONCAT(' FOREIGN KEY REFERENCES ', constKeys.TABLE_NAME, '(', constKeys.COLUMN_NAME, ')')) 
+Else '' 
+END
+, 
+CASE WHEN sysCol.is_identity = 1
+Then 
+(' IDENTITY') 
+Else '' 
+END
+,
+',') as queryPiece FROM 
+INFORMATION_SCHEMA.COLUMNS as cols
+LEFT JOIN INFORMATION_SCHEMA.KEY_COLUMN_USAGE as keys ON 
+(keys.TABLE_NAME = cols.TABLE_NAME and keys.COLUMN_NAME = cols.COLUMN_NAME)
+LEFT JOIN INFORMATION_SCHEMA.REFERENTIAL_CONSTRAINTS as refConst ON 
+(refConst.CONSTRAINT_NAME = keys.CONSTRAINT_NAME)
+LEFT JOIN INFORMATION_SCHEMA.TABLE_CONSTRAINTS as consts ON 
+(consts.TABLE_NAME = cols.TABLE_NAME AND consts.CONSTRAINT_NAME = keys.CONSTRAINT_NAME)
+LEFT JOIN 
+(SELECT DISTINCT CONSTRAINT_NAME, TABLE_NAME, COLUMN_NAME FROM INFORMATION_SCHEMA.KEY_COLUMN_USAGE) 
+as constKeys ON (constKeys.CONSTRAINT_NAME = refConst.UNIQUE_CONSTRAINT_NAME)
+JOIN sys.objects sysObj ON (sysObj.Name = cols.TABLE_NAME)
+JOIN sys.columns sysCol ON (sysObj.object_id = sysCol.object_id AND SysCol.Name = cols.COLUMN_NAME)
+ WHERE cols.TABLE_NAME = @table
+UNION ALL
+SELECT ')'
+ );
+
+ select * from dbo.select_create('tavern_humanoids');

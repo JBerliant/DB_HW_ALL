@@ -109,4 +109,4 @@ select * from tavern_visitors where (visitor_out between '1244-02-01 00:00:00' a
 
 --9. Using the additional queries provided, take the lab’s SELECT ‘CREATE query’ and add any IDENTITY and PRIMARY KEY constraints to it. 
 
--- Will post the answer to this in another file
+-- Will post the answer to this in another file	

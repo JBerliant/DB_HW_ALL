@@ -105,16 +105,17 @@ FOREIGN KEY(item_sku) REFERENCES tavern_supplies(item_sku) ON DELETE CASCADE,
 FOREIGN KEY (tavern_id) REFERENCES tavern_info(tavern_id) ON DELETE CASCADE
 );
 
+
 CREATE TABLE service_desc 
 (
-service_id VARCHAR(50) PRIMARY KEY NOT NULL,
+service_id int IDENTITY (1, 1) PRIMARY KEY,
+service_title VARCHAR(50) NOT NULL,
 service_desc VARCHAR(255)
 );
 
-
 CREATE TABLE service_status
 (
-service_id VARCHAR(50),
+service_id INT,
 tavern_id INT,
 service_status VARCHAR(20),
 FOREIGN KEY(service_id) REFERENCES service_desc(service_id) ON DELETE CASCADE,
@@ -159,7 +160,6 @@ FOREIGN KEY (visitor_id) REFERENCES visitor_id(visitor_id) ON DELETE CASCADE
 );
 
 
-
 CREATE TABLE tavern_rooms(
 room_id INT IDENTITY (474001,1) PRIMARY KEY,
 room_attr VARCHAR(100),
@@ -179,11 +179,12 @@ sale_amt DEC (8,2),
 time_of_sale DATETIME2(0)
 );
 
+
 CREATE TABLE tavern_sales
 (
 sale_id INT IDENTITY (310000,1) PRIMARY KEY,
 customer_id INT,
-service_id VARCHAR(50),
+service_id INT,
 service_price DEC(6,2),
 service_qty INT,
 total_sale DEC(6,2) NOT NULL,

@@ -89,7 +89,7 @@ INSERT INTO tavern_employment(employee_id, tavern_id,employee_role,role_start_da
 (26425217,33017,1, 345.95, '1243-11-24 17:32:13'),
 (26425217,33014,12, 33.00,'1244-01-29 10:36:16');
 
- INSERT INTO service_desc VALUES	
+ INSERT INTO service_desc(service_title,service_desc) VALUES	
  ('Beard Wash', 'Feel Fresh and Clean with a full beard comb and wash'),
  ('Hair Styling', 'Change your hair style - includes hair and beard'),
  ('Hair Coloring', 'Choose from dozens of color dyes for your hair and beard'),
@@ -98,12 +98,11 @@ INSERT INTO tavern_employment(employee_id, tavern_id,employee_role,role_start_da
  ('Dinner', 'Satiate your hunger with a four course dinner fit for a hero. Ask about our specials!');
 
 INSERT INTO service_status VALUES
-('Beard Wash', 26426194, 'Active'),
-('Hair Coloring', 26426267,'Active'),
-('Armor Shine', 26463458, 'Active'),
-('Dinner', 26425352,'Active'),
-('Foot Rub', 26477255,'Inactive');
-
+(1, 26426194, 'Active'),
+(3, 26426267,'Active'),
+(5, 26463458, 'Active'),
+(6, 26425352,'Active'),
+(4, 26477255,'Inactive');
 
 
 INSERT INTO visitor_id (humanoid_id,tavern_id)Values
@@ -155,15 +154,16 @@ INSERT INTO classlvl (guest_id, class_id, lvl) VALUES
 (600003, 2, 3),
 (600005, 4, 4);
 
+select* from tavern_sales;
 
 INSERT INTO tavern_sales (customer_id, service_id, service_price, service_qty, total_sale, sale_datetime, tavern_id) VALUES
-( 600004,'Dinner', 12.00, 3, 36.00, '1244-03-05 13:22:54', 26425352),
-( 600001,'Hair Coloring', 14.00, 1, 14.00, '1244-03-03 18:21:23', 26426267),
-( 600002,'Beard Wash', 11.00, 1, 11.00, '1244-03-05 11:26:35', 26426267),
-( 600003,'Dinner', 12.00, 2, 24.00, '1244-03-05 22:14:28', 26477255),
-( 600005,'Armor Shine', 28.00, 1, 28.00, '1244-03-02 16:00:31', 26463458),
-( 600004,'Foot Rub', 32.00,1,32.00, '1244-03-06 12:14:35', 26425352),
-( 600006,'Dinner', 12.00, 4, 48.00, '1244-03-05 22:14:28', 26477255);
+( 600004,6, 12.00, 3, 36.00, '1244-03-05 13:22:54', 26425352),
+( 600001,3, 14.00, 1, 14.00, '1244-03-03 18:21:23', 26426267),
+( 600002,1, 11.00, 1, 11.00, '1244-03-05 11:26:35', 26426267),
+( 600003,6, 12.00, 2, 24.00, '1244-03-05 22:14:28', 26477255),
+( 600005,5, 28.00, 1, 28.00, '1244-03-02 16:00:31', 26463458),
+( 600004,4, 32.00,1,32.00, '1244-03-06 12:14:35', 26425352),
+( 600006,6, 12.00, 4, 48.00, '1244-03-05 22:14:28', 26477255);
 
 
 INSERT INTO tavern_rooms (room_attr, room_status, room_rate, tavern_id) VALUES
