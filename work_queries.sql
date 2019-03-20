@@ -103,3 +103,98 @@ LEFT JOIN INFORMATION_SCHEMA.REFERENTIAL_CONSTRAINTS as refConst
 LEFT JOIN (SELECT DISTINCT CONSTRAINT_NAME, TABLE_NAME, COLUMN_NAME FROM INFORMATION_SCHEMA.KEY_COLUMN_USAGE) as constKeys 
 	ON (constKeys.CONSTRAINT_NAME = refConst.UNIQUE_CONSTRAINT_NAME)
 WHERE cols.TABLE_NAME = 'Tavern_info' UNION ALL SELECT ')';
+
+
+
+
+--HW5  #3
+--CREATE PROCEDURE classcount
+DROP TABLE IF EXISTS #guestclasses
+DECLARE @classmax smallint`
+--DECLARE @guestclass smallint
+--DECLARE @rowcount smallint
+DECLARE @count varchar(MAX)
+DECLARE @classcol VARCHAR(50)
+set @count = 0
+SET @classmax  = (select top 1 count(classlvl.guest_id) as classcount FROM CLASSlvl  join class on class.class_id = classlvl.class_id
+				 group by guest_id
+				 order by classcount desc)
+--SET @classcol = 'SELECT ' + @count
+--create table #guestclasses(
+--guest_id int)
+While (@count <= @classmax)
+Begin
+SET @classcol = 'alter table #guestclasses add ' +@count+'nvarchar(10)'
+SET @count = @count + 1
+CONTINUE;
+IF @count > @classmax BREAK;
+END;
+
+select * from #guestclasses
+
+classname[@count] VARCHAR(50),
+
+
+select * from classlvl
+
+Declare @ColumnName as Varchar(50)
+declare @ssql nvarchar(200)
+declare @dataType nvarchar(150)
+
+Set @ColumnName ='class'+
+Set @dataType ='nvarchar(50)'
+set @ssql = 'Alter table classlvl Add '+ @ColumnName+' '+ @dataType 
+
+
+print @ssql 
+exec sp_executesql @ssql
+go
+select* from classlvl
+--CREATE PROCEDURE classcount
+DECLARE @classmax smallint
+--DECLARE @guestclass smallint
+--DECLARE @rowcount smallint
+DECLARE @count varchar(MAX)
+DECLARE @classcol VARCHAR(50)
+set @count = 0
+SET @classmax  = (select top 1 count(classlvl.guest_id) as classcount FROM CLASSlvl  join class on class.class_id = classlvl.class_id
+				 group by guest_id
+				 order by classcount desc)
+--SET @classcol = 'SELECT ' + @count
+--create table #guestclasses(
+--guest_id int)
+While (@count <= @classmax)
+Begin
+SET @classcol = 'alter table #guestclasses add ' +@count+'nvarchar(10)'
+SET @count = @count + 1
+CONTINUE;
+IF @count > @classmax BREAK;
+END;
+
+select * from #guestclasses
+
+classname[@count] VARCHAR(50),
+
+
+DECLARE @name NVARCHAR(MAX) = 'class'
+DECLARE @lvl  NVARCHAR(MAX) = 'lvl'
+
+DECLARE @sql NVARCHAR(MAX) = 'ALTER TABLE #guestclasses ADD '+@name+' nvarchar(10) null'
+--DECLARE @sql2 NVARCHAR(50)= 'ALTER TABLE #guestclasses ADD '+@lvl+' nvarchar(10) null'
+
+EXEC sys.sp_executesql @sql;
+
+set 
+count(classlvl.guest_id)  >0 (concat(class_name, classlvl
+
+
+DECLARE @name NVARCHAR(MAX) = 'class'
+DECLARE @lvl  NVARCHAR(MAX) = 'lvl'
+
+DECLARE @sql NVARCHAR(MAX) = 'ALTER TABLE #guestclasses ADD '+@name+' nvarchar(10) null'
+--DECLARE @sql2 NVARCHAR(50)= 'ALTER TABLE #guestclasses ADD '+@lvl+' nvarchar(10) null'
+
+EXEC sys.sp_executesql @sql;
+
+set 
+count(classlvl.guest_id)  >0 (concat(class_name, classlvl
