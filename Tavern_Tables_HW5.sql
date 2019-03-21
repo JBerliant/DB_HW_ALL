@@ -171,7 +171,7 @@ tavern_id INT FOREIGN KEY REFERENCES tavern_info(tavern_id) ON DELETE CASCADE
 CREATE TABLE room_stays (
 stay_id INT PRIMARY KEY IDENTITY (674001,1),
 room_id INT FOREIGN KEY REFERENCES tavern_rooms(room_id) ON DELETE CASCADE,
-guest_id INT FOREIGN KEY REFERENCES visitor_id(visitor_id),
+guest_id INT FOREIGN KEY REFERENCES visitor_id(visitor_id)ON DELETE CASCADE,
 DATE_IN DATETIME2(0),
 DATE_OUT DATETIME2(0),
 days_stayed SMALLINT,
@@ -197,7 +197,7 @@ FOREIGN KEY(service_id) REFERENCES service_desc(service_id) ON DELETE CASCADE
 CREATE TABLE tavern_item_sales
 (
 it_sale INT IDENTITY (1,1) PRIMARY KEY,
-customer_id INT FOREIGN KEY REFERENCES visitor_id(visitor_id),
+customer_id INT FOREIGN KEY REFERENCES visitor_id(visitor_id) ON DELETE CASCADE,
 item_sku INT,
 qty INT,
 total_sale DEC(8,2) NOT NULL,
@@ -212,5 +212,5 @@ FOREIGN KEY(item_sku) REFERENCES tavern_supplies(item_sku) ON DELETE CASCADE
 
 ALTER TABLE tavern_sales
 ADD CONSTRAINT FK_VisitorID
-FOREIGN KEY (customer_id) REFERENCES visitor_id(visitor_id);
+FOREIGN KEY (customer_id) REFERENCES visitor_id(visitor_id)ON DELETE CASCADE;
 GO

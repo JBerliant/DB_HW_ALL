@@ -31,6 +31,24 @@
           <AssociatedConnUserName />
           <FullPath>HW4_queries.sql</FullPath>
         </FileNode>
+        <FileNode Name="HW5_queries.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:LAB-MSSQL01:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>LAB-MSSQL01</AssociatedConnSrvName>
+          <AssociatedConnUserName />
+          <FullPath>HW5_queries.sql</FullPath>
+        </FileNode>
+        <FileNode Name="HW6_queries.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:LAB-MSSQL01:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>LAB-MSSQL01</AssociatedConnSrvName>
+          <AssociatedConnUserName />
+          <FullPath>HW6_queries.sql</FullPath>
+        </FileNode>
+        <FileNode Name="LAB_6.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:LAB-MSSQL01:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>LAB-MSSQL01</AssociatedConnSrvName>
+          <AssociatedConnUserName />
+          <FullPath>LAB_6.sql</FullPath>
+        </FileNode>
         <FileNode Name="Select_Create_table_lab_3-4.sql">
           <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:LAB-MSSQL01:True</AssociatedConnectionMoniker>
           <AssociatedConnSrvName>LAB-MSSQL01</AssociatedConnSrvName>
@@ -43,11 +61,23 @@
           <AssociatedConnUserName />
           <FullPath>Tavern_Tables_HW4.sql</FullPath>
         </FileNode>
+        <FileNode Name="Tavern_Tables_HW5.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:LAB-MSSQL01:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>LAB-MSSQL01</AssociatedConnSrvName>
+          <AssociatedConnUserName />
+          <FullPath>Tavern_Tables_HW5.sql</FullPath>
+        </FileNode>
         <FileNode Name="Tavern_Values_HW4.sql">
           <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:LAB-MSSQL01:True</AssociatedConnectionMoniker>
           <AssociatedConnSrvName>LAB-MSSQL01</AssociatedConnSrvName>
           <AssociatedConnUserName />
           <FullPath>Tavern_Values_HW4.sql</FullPath>
+        </FileNode>
+        <FileNode Name="Tavern_Values_HW5.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:LAB-MSSQL01:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>LAB-MSSQL01</AssociatedConnSrvName>
+          <AssociatedConnUserName />
+          <FullPath>Tavern_Values_HW5.sql</FullPath>
         </FileNode>
         <FileNode Name="work_queries.sql">
           <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:LAB-MSSQL01:True</AssociatedConnectionMoniker>

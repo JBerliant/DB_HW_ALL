@@ -96,7 +96,8 @@ INSERT INTO tavern_employment(employee_id, tavern_id,employee_role,role_start_da
  ('Hair Coloring', 'Choose from dozens of color dyes for your hair and beard'),
  ('Foot Rub', 'Relieve common adventurer foot aches'),
  ('Armor Shine','Intimidate your foes with the shine of newly polished armor - not available for leather, cloth, or chain-mail'),
- ('Dinner', 'Satiate your hunger with a four course dinner fit for a hero. Ask about our specials!');
+ ('Dinner', 'Satiate your hunger with a four course dinner fit for a hero. Ask about our specials!')
+ ('bookr', 'service that finds the cheapest room for any date and automatically books it');
 
 INSERT INTO service_status VALUES
 (1, 26426194, 'Active'),
